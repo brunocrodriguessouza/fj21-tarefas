@@ -37,10 +37,10 @@
 
 				<td><fmt:formatDate value="${tarefa.dataFinalizacao.time}"
 						pattern="dd/MM/YYYY" /></td>
+						
+				<td><a href="removeTarefa?id=${tarefa.id}">Remover</a></td>
 			</tr>
 		</c:forEach>
 	</table>
-
-
 </body>
 </html>
