@@ -14,6 +14,15 @@
 <title>Lista Tarefas</title>
 </head>
 <body>
+	<script type="text/javascript">
+		function finalizaAgora(id){
+			$.post("finalizaTarefa",{'id': id}, function(){
+				//selecionando o elemento htmll atraves da ID e alterando o HTML dele 
+				$("#tarefa_" +id).html("Finalizado");
+			})
+		}
+	</script>
+
 	<a href="novaTarefa">Criar nova tarefa</a>
 
 	<br />
@@ -32,7 +41,7 @@
 				<td>${tarefa.descricao}</td>
 
 				<c:if test="${tarefa.finalizado eq false }">
-					<td>Nao Finalizado</td>
+					<td id="tarefa_${tarefa.id }"><a href="#" onClick="finalizaAgora(${tarefa.id})">Finaliza agora!</td>
 				</c:if>
 				<c:if test="${tarefa.finalizado eq true }">
 					<td>Finalizado</td>
