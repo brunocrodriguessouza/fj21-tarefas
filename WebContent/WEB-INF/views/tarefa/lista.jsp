@@ -8,6 +8,9 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link href="resources/css/jquery.css" rel="stylesheet">
+<script src="resources/js/jquery.js"></script>
+<script src="resources/js/jquery-ui.js"></script>
 <title>Lista Tarefas</title>
 </head>
 <body>
