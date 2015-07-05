@@ -53,14 +53,15 @@ public class TarefasController {
 	@RequestMapping("alteraTarefa")
 	public String altera(Tarefa tarefa) {
 		JdbcTarefaDao dao = new JdbcTarefaDao();
-		dao.altera(tarefa);	
+		dao.altera(tarefa);
 		return "redirect:listaTarefas";
 	}
-	
-	@ResponseBody
+
 	@RequestMapping("finalizaTarefa")
-	public void finaliza(Long id){
-		JdbcTarefaDao dao = new JdbcTarefaDao();
-		dao.finaliza(id);
+	public String finaliza(Long id, Model model) {
+	  JdbcTarefaDao dao = new JdbcTarefaDao();
+	  dao.finaliza(id);
+	  model.addAttribute("tarefa", dao.buscaPorId(id));
+	  return "tarefa/finalizada";
 	}
 }

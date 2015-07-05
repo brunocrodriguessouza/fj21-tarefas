@@ -15,12 +15,12 @@
 </head>
 <body>
 	<script type="text/javascript">
-		function finalizaAgora(id){
-			$.post("finalizaTarefa",{'id': id}, function(){
-				//selecionando o elemento htmll atraves da ID e alterando o HTML dele 
-				$("#tarefa_" +id).html("Finalizado");
-			})
-		}
+	  function finalizaAgora(id) {
+	    $.post("finalizaTarefa", {'id' : id}, function(resposta) {
+	      $("#tarefa_"+id).html(resposta);
+	    });
+	  }
+	</script>
 	</script>
 
 	<a href="novaTarefa">Criar nova tarefa</a>
@@ -36,7 +36,7 @@
 			<th>Data de finalizacao</th>
 		</tr>
 		<c:forEach items="${tarefas}" var="tarefa">
-			<tr>
+			<tr id="tarefa_${tarefa.id}">
 				<td>${tarefa.id}</td>
 				<td>${tarefa.descricao}</td>
 
@@ -49,7 +49,7 @@
 
 				<td><fmt:formatDate value="${tarefa.dataFinalizacao.time}"
 						pattern="dd/MM/YYYY" /></td>
-						
+
 				<td><a href="removeTarefa?id=${tarefa.id}">Remover</a></td>
 				<td><a href="mostraTarefa?id=${tarefa.id}">Alterar</a></td>
 			</tr>
