@@ -64,4 +64,9 @@ public class TarefasController {
 	  model.addAttribute("tarefa", dao.buscaPorId(id));
 	  return "tarefa/finalizada";
 	}
+	
+	@RequestMapping("testeLink")
+	public String testeLink(Long id, Model model) {
+	  return "tarefa/testeLink";
+	}
 }
