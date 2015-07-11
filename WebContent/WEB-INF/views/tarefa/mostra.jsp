@@ -11,6 +11,7 @@
 <link href="resources/css/jquery.css" rel="stylesheet">
 <script src="resources/js/jquery.js"></script>
 <script src="resources/js/jquery-ui.js"></script>
+<link type="text/css" href="resources/css/tarefas.css" rel="stylesheet">
 <body>
 	<h3>Alterar tarefa - ${tarefa.id }</h3>
 	<form action="alteraTarefa" method="post">
