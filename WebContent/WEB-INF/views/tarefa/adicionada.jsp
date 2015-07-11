@@ -4,6 +4,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link type="text/css" href="resources/css/tarefas.css" rel="stylesheet">
 </head>
 <body>
     Nova tarefa adicionada com sucesso!
